@@ -1,0 +1,13 @@
+{
+	"name": "Mizar Formal Verification Environment",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"postCreateCommand": "bash ./.devcontainer/install-mizar.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Mizar-Project.mizar-vscode"
+			]
+		}
+	},
+	"remoteUser": "root"
+}
