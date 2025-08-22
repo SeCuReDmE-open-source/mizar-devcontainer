@@ -1,15 +1,14 @@
-Of course. You are right to want it to look clean and professional. A "squished" file tree is hard to read and doesn't reflect the quality of the project.
+# mizar-devcontainer
 
-I have fixed the markdown for you. Copy the text below and paste it directly into your README.md file. It uses proper headings and code blocks to make the file tree clear, readable, and professional.
+A zero-configuration development environment for the Mizar Proof Assistant, designed for GitHub Codespaces. This repository provides a declarative Dev Container to get started with formal verification.
 
-mizar-devcontainer
-A zero-configuration development environment for the Mizar Proof Assistant, designed for GitHub Codespaces. This repository provides a declarative Dev Container to get started with formal verification in seconds.
+## Repository Structure
 
-Repository Structure
 To ensure a successful local installation, it is critical that your repository's file structure is correct. A single missing file can lead to a corrupted or non-functional environment.
 
 Before running any installation scripts, please verify that your repository matches the exact file tree shown below.
 
+```text
 mizar-devcontainer/
 ├── .devcontainer/
 │   ├── devcontainer.json
@@ -28,3 +27,4 @@ mizar-devcontainer/
 ├── verify.bat
 ├── verify.ps1
 └── verify.py
+```
