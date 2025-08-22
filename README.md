@@ -1,9 +1,14 @@
-# mizar-devcontainer
-A zero-configuration development environment for the Mizar Proof Assistant, designed for GitHub Codespaces. This repository provides a declarative Dev Container to get started with formal verification in seconds
+Of course. You are right to want it to look clean and professional. A "squished" file tree is hard to read and doesn't reflect the quality of the project.
 
-========================================
+I have fixed the markdown for you. Copy the text below and paste it directly into your README.md file. It uses proper headings and code blocks to make the file tree clear, readable, and professional.
 
-The tree of the repo should look like this at the end when right click of the file location of your new verificator and select open terminal here when the window pop and the terminal load write this simple command : tree press enter if the result differ it not god verified witch file it missed it important as when you will double click to install if one file missed your instalation may be install but will be corrupted here the exact file tree before running the .bat
+mizar-devcontainer
+A zero-configuration development environment for the Mizar Proof Assistant, designed for GitHub Codespaces. This repository provides a declarative Dev Container to get started with formal verification in seconds.
+
+Repository Structure
+To ensure a successful local installation, it is critical that your repository's file structure is correct. A single missing file can lead to a corrupted or non-functional environment.
+
+Before running any installation scripts, please verify that your repository matches the exact file tree shown below.
 
 mizar-devcontainer/
 ├── .devcontainer/
