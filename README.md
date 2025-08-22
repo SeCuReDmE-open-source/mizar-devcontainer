@@ -19,9 +19,16 @@ mizar-devcontainer/
 │   └── templates/
 │       └── index.html
 ├── .gitignore
+├── AGENTS.md
+├── CONTRIBUTING.md
+├── DEEPWIKI_DEVIN_AI.md
+├── GETTING_STARTED.md
+├── LANG_DEEP_REASEARCH.md
 ├── LICENSE
+├── mizar.md
 ├── README.md
 ├── requirements.txt
+├── SECURITY.md
 ├── start_server.bat
 ├── start_server.ps1
 ├── verify.bat
