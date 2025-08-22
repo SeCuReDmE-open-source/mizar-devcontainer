@@ -1,0 +1,3 @@
+@echo off
+echo Starting Mizar Verification Server...
+python src/main.py
