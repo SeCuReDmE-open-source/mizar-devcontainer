@@ -38,50 +38,70 @@
 # ....^",,,,,,,,,::::,,,"""^`'..'```.                     .`'..
 # .'`",,,"`^"^^",,,:,,"""^^.                          ..''''..
 
-import pytest
-from unittest.mock import patch
-from verify import run_verifier
+import os
 
-def test_run_verifier_no_filename(capsys):
-    """
-    Test that run_verifier prints an error message when no filename is provided.
-    """
-    run_verifier(None)
-    captured = capsys.readouterr()
-    assert "Error: Please provide a filename." in captured.out
-    assert "Usage: python verify.py <your_proof.miz>" in captured.out
+def get_comment_syntax(ext):
+    if ext in ['.py', '.sh', '.ps1', '.gitignore', '.gitigonre']:
+        return '#', ''
+    elif ext in ['.js', '.css']:
+        return '/*', '*/'
+    elif ext in ['.html']:
+        return '<!--', '-->'
+    elif ext in ['.bat']:
+        return 'REM', ''
+    # Let the main loop handle .md and other text files
+    else:
+        return '', ''
 
-@patch('verify.subprocess.run')
-def test_run_verifier_with_filename(mock_subprocess_run):
-    """
-    Test that run_verifier calls subprocess.run with the correct arguments.
-    """
-    filename = "tests/test.miz"
-    run_verifier(filename)
-    mock_subprocess_run.assert_called_once_with(
-        ['mizf', filename],
-        capture_output=True,
-        text=True
-    )
+def prepend_art():
+    with open('ascii_art.txt', 'r') as f:
+        ascii_art = f.read()
 
-@patch('verify.subprocess.run')
-def test_run_verifier_file_not_found(mock_subprocess_run, capsys):
-    """
-    Test that run_verifier handles FileNotFoundError correctly.
-    """
-    mock_subprocess_run.side_effect = FileNotFoundError
-    filename = "tests/test.miz"
-    run_verifier(filename)
-    captured = capsys.readouterr()
-    assert "Error: 'mizf' command not found." in captured.out
+    with open('filtered_files.txt', 'r') as f:
+        filepaths = [line.strip() for line in f if line.strip()]
 
-@patch('verify.subprocess.run')
-def test_run_verifier_unexpected_error(mock_subprocess_run, capsys):
-    """
-    Test that run_verifier handles other exceptions correctly.
-    """
-    mock_subprocess_run.side_effect = Exception("Something went wrong")
-    filename = "tests/test.miz"
-    run_verifier(filename)
-    captured = capsys.readouterr()
-    assert "An unexpected error occurred: Something went wrong" in captured.out
+    for filepath in filepaths:
+        _, ext = os.path.splitext(filepath)
+        start_comment, end_comment = get_comment_syntax(ext)
+
+        commented_art = []
+
+        if ext == '.md':
+            commented_art.append('```')
+            commented_art.extend(ascii_art.splitlines())
+            commented_art.append('```')
+        # Add a blank line before the art for block comments
+        elif start_comment and end_comment:
+            commented_art.append(start_comment)
+            commented_art.extend(ascii_art.splitlines())
+            commented_art.append(end_comment)
+        # For line-by-line comments
+        elif start_comment:
+            for line in ascii_art.splitlines():
+                commented_art.append(f"{start_comment} {line}")
+        # For other no-comment files like .txt
+        else:
+            commented_art.extend(ascii_art.splitlines())
+
+        commented_art_str = '\n'.join(commented_art) + '\n\n'
+
+        try:
+            with open(filepath, 'r+', encoding='utf-8') as f:
+                original_content = f.read()
+                f.seek(0, 0)
+                f.write(commented_art_str + original_content)
+        except UnicodeDecodeError:
+            # Fallback for files that are not utf-8
+            try:
+                with open(filepath, 'r+', encoding='latin-1') as f:
+                    original_content = f.read()
+                    f.seek(0, 0)
+                    f.write(commented_art_str + original_content)
+            except Exception as e:
+                print(f"Could not process file {filepath}: {e}")
+        except Exception as e:
+            print(f"Could not process file {filepath}: {e}")
+
+
+if __name__ == '__main__':
+    prepend_art()
