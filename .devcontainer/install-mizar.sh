@@ -8,7 +8,7 @@ apt-get update && apt-get install -y wget tar
 
 # 2. Download the official Mizar archive 
 # URL for Mizar Version 8.1.15 with MML 5.94.1493
-MIZAR_URL="https://mizar.uwb.edu.pl/system/files/mizar-8.1.15_5.94.1493-i386-linux.tar"
+MIZAR_URL="https://mizar.uwb.edu.pl/~softadm/pub/system/i386-linux/mizar-8.1.15_5.94.1493-i386-linux.tar"
 echo "Downloading Mizar from ${MIZAR_URL}..."
 wget -q -O /tmp/mizar.tar "${MIZAR_URL}"
 
@@ -16,8 +16,7 @@ wget -q -O /tmp/mizar.tar "${MIZAR_URL}"
 echo "Extracting and installing Mizar..."
 mkdir -p /tmp/mizar_install
 tar -xvf /tmp/mizar.tar -C /tmp/mizar_install
-INSTALL_DIR=$(find /tmp/mizar_install -mindepth 1 -maxdepth 1 -type d)
-cd "${INSTALL_DIR}"
+cd /tmp/mizar_install
 
 # Run the installer in non-interactive mode using the --default flag
 ./install.sh --default
