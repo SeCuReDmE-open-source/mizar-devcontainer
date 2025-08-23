@@ -2,15 +2,9 @@
 [![SPONSORED BY E2B FOR STARTUPS](https://img.shields.io/badge/SPONSORED%20BY-E2B%20FOR%20STARTUPS-ff8800?style=for-the-badge)](https://e2b.dev/startups)
 
 
-[![SPONSORED BY E2B FOR RESEARCH](https://img.shields.io/badge/SPONSORED%20BY-E2B%20FOR%20STARTUPS-ff8800?style=for-the-badge)](https://e2b.dev/research)
-
-
 # mizar-devcontainer
 
 A zero-configuration development environment for the Mizar Proof Assistant, designed for GitHub Codespaces. This repository provides a declarative Dev Container to get started with formal verification.
-
-Proudly supported by:
-[![E2B for Startups](https://e2b.dev/docs/badge.svg)](https://e2b.dev/startups)
 
 ---
 
