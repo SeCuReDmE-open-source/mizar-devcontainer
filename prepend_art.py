@@ -1,3 +1,4 @@
+
 import os
 
 def get_comment_syntax(ext):
@@ -8,7 +9,7 @@ def get_comment_syntax(ext):
     elif ext in ['.html']:
         return '<!--', '-->'
     elif ext in ['.bat']:
-        return 'REM', ''
+        return 'REM
     else:
         return '', '' # For .md, .txt
 
@@ -24,8 +25,7 @@ def prepend_art():
         start_comment, end_comment = get_comment_syntax(ext)
 
         commented_art = []
-        # Add a blank line before the art for block comments
-        if start_comment and end_comment:
+
             commented_art.append(start_comment)
             commented_art.extend(ascii_art.splitlines())
             commented_art.append(end_comment)
@@ -33,7 +33,8 @@ def prepend_art():
         elif start_comment:
             for line in ascii_art.splitlines():
                 commented_art.append(f"{start_comment} {line}")
-        # For no comments
+
+        # For no comment
         else:
             commented_art.extend(ascii_art.splitlines())
 

@@ -4,7 +4,6 @@ def filter_files():
     allowed_extensions = ['.py', '.js', '.html', '.css', '.md', '.txt', '.bat', '.ps1', '.sh', '.gitignore', '.gitigonre']
     ignored_dirs = ['.git', '__pycache__', '.devcontainer']
     ignored_files = ['badge.png', 'ascii_art.txt', 'all_files.txt', 'filter_files.py']
-
     filtered_files = []
     with open('all_files.txt', 'r') as f:
         for filepath in f:

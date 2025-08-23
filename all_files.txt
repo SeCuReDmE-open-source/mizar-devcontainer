@@ -1,3 +1,4 @@
+
 ./temp_proof.ref
 ./temp_proof.eno
 ./requirements.txt
@@ -20,20 +21,6 @@
 ./README.md
 ./temp_proof.ere
 ./ALPHA_EVOLVE.md
-./.git/objects/8a/a847b9b633e0bd2e0ff03b35147aa5a0672fe1
-./.git/objects/8a/93d723d928b21e7efef1d56d2f2c51dde2caf5
-./.git/objects/8a/cbb35b85573add4440aed5b25477c64fcbbe11
-./.git/objects/20/02bdbfd0fc2f376782146143397fcb7bb5b5e7
-./.git/objects/pack/pack-5a3affb933fdf2dd988d0d2372fff6a09149c9f9.rev
-./.git/objects/pack/pack-5a3affb933fdf2dd988d0d2372fff6a09149c9f9.idx
-./.git/objects/pack/pack-5a3affb933fdf2dd988d0d2372fff6a09149c9f9.pack
-./.git/objects/2c/eb837079be477684fbe589b6199f347bc15c30
-./.git/objects/41/54ab3df6badea926f047a342bbc3e253cc43f3
-./.git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391
-./.git/objects/a5/2ae217f8e1e8d5e2fec0aac24e822e7fc2834e
-./.git/objects/0e/1f5bd93166b08fff90b2e4fbb42b595196c3a8
-./.git/objects/de/747db266de50390843e187e2c8974b874655c6
-./.git/objects/93/073f4f1a960c10af5fc40e355edc17fa178e0d
 ./.git/index
 ./.git/hooks/pre-rebase.sample
 ./.git/hooks/update.sample
@@ -119,7 +106,7 @@
 ./temp_proof.sgl
 ./AGENTS.md
 ./start_server.ps1
-./__pycache__/verify.cpython-312.pyc
+./__pycache__/verify.cpython-312.py
 ./temp_proof.evl
 ./temp_proof.fil
 ./temp_proof.dcx
