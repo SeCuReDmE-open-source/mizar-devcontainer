@@ -18,6 +18,11 @@ mizar-devcontainer/
 │   ├── server.py
 │   └── templates/
 │       └── index.html
+├── tests/
+│   ├── test.miz
+│   ├── test_integration.py
+│   ├── test_server.py
+│   └── test_verify.py
 ├── .gitignore
 ├── AGENTS.md
 ├── CONTRIBUTING.md
@@ -25,8 +30,9 @@ mizar-devcontainer/
 ├── GETTING_STARTED.md
 ├── LANG_DEEP_REASEARCH.md
 ├── LICENSE
-├── mizar.md
+├── MIZAR.md
 ├── README.md
+├── requirements-dev.txt
 ├── requirements.txt
 ├── SECURITY.md
 ├── start_server.bat
