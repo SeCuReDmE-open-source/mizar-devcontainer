@@ -3,8 +3,10 @@ set -e
 
 echo "Starting Mizar installation..."
 
-# 1. Update package lists and install dependencies
-apt-get update && apt-get install -y wget tar
+# 1. Add i386 architecture and install dependencies
+dpkg --add-architecture i386
+apt-get update
+apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 wget tar
 
 # 2. Download the official Mizar archive 
 # URL for Mizar Version 8.1.15 with MML 5.94.1493
